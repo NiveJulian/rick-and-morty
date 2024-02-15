@@ -1,0 +1,26 @@
+.fav {
+    width: 18vm;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 5rem 0;
+    position: relative;
+    border-radius: 0.4rem;
+    margin: 0.5rem;
+    overflow: hidden;
+    color: white;
+}
+
+.cards {
+    width: 18vm;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 5rem 0;
+    position: relative;
+    border-radius: 0.4rem;
+    margin: 0.5rem;
+}

@@ -1,0 +1,8 @@
+.App {
+  text-align: center;
+}
+
+body{
+  background-image: url('./util/img/pxfuel.jpg');
+  background-size: cover;
+}
