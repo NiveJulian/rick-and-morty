@@ -68,6 +68,8 @@ function App() {
       );
     };
 
+    
+
     return (
         <div className='App'>
             {pathname !== "/" && <Nav onAddRandomCharacter={onAddRandomCharacter} onSearch={onSearch} onLogout={logout} />} {/* Pasar la función de logout como prop */}

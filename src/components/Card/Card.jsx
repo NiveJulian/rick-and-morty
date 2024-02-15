@@ -34,12 +34,20 @@ export default function Card(
       if(isFav){
          setIsFav(false);
          dispatch(removeFav(id))
+         onClose(id);
+
       }else{
          setIsFav(true)
          dispatch(addFav(myChar))
       }
    }
 
+   const handleClose=()=>{
+      onClose(id);
+      if (isFav) {
+         dispatch(removeFav(id));
+       }
+     }
 
    return (
       <div className={card}>
@@ -47,7 +55,7 @@ export default function Card(
                <div className={cardContent}>
                   {
                      onClose ? (
-                        <button className={btn} onClick={() => onClose(id) && handleFavorite}>X</button>
+                        <button className={btn} onClick={handleClose}>X</button>
                      ) : (
                         ""
                      )
