@@ -6,7 +6,7 @@ import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'; // Importar el
 
 const { container, link, logOut } = styles;
 
-export default function Nav({ onSearch, onLogout, onAddRandomCharacter }) {
+export default function Nav({ onSearch, onLogout, random }) {
 
     
     return (
@@ -14,7 +14,7 @@ export default function Nav({ onSearch, onLogout, onAddRandomCharacter }) {
             <Link className={link} to='/home'>Home</Link>
             <Link className={link} to='/about'>About</Link>
             <Link className={link} to='/favorites'>♥</Link>
-            <Link className={link} onClick={onAddRandomCharacter}>Random</Link>
+            <Link className={link} onClick={random}>Random</Link>
             <SearchBar onSearch={onSearch} />
             <button className={logOut} onClick={onLogout} title='Salir'>
                 <FontAwesomeIcon icon={faSignOutAlt} /> 

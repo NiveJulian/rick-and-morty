@@ -6,12 +6,14 @@ const { imagen, card, form } = styles
 
 export default function Form({login}) {
     const [userData, setUserData] = useState({email:"", password:""})
-
-    const [errors, setErrors] = useState({})
+    const [errors, setErrors]= useState ({email:"",password:""});
     
-    const handleChange = (e) => {
-        setErrors(validator({ ...userData, [e.target.name]: e.target.value }))
-        setUserData({ ...userData, [e.target.name]: e.target.value });
+    const handleChange= (event)=>{
+        const property= event.target.name;
+        const value= event.target.value;
+
+        setUserData ({...userData, [property]:value});
+        validator({...userData, [property]:value}, errors, setErrors);
     }
 
     const handleSubmit = (e) => {
