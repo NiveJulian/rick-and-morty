@@ -13,24 +13,26 @@ export default function Card({
   gender,
   origin,
   image,
-  onClose: onClose,
+  onClose,
 }) {
   const [isFav, setIsFav] = useState(false);
   const dispatch = useDispatch();
   const myFavorites = useSelector((state) => state.myFavorites);
 
   const myChar = {
+    id: id,
     name: name,
     gender: gender,
     species: species,
-    id: id,
+    status: status,
+    origin: origin,
     image: image,
     onClose: onClose,
   };
 
   useEffect(() => {
-   setIsFav(myFavorites.some((fav) => fav.id === id));
- }, [myFavorites, id]);
+    setIsFav(myFavorites.some((fav) => fav.id === id));
+  }, [myFavorites, id]);
 
   const handleFavorite = () => {
     if (isFav) {
@@ -43,12 +45,11 @@ export default function Card({
   };
 
   const handleClose = () => {
-   setIsFav(true);
-   
+    setIsFav(true);
+
     if (isFav) {
       setIsFav(false);
       dispatch(removeFav(id));
-      
     }
   };
 
@@ -56,13 +57,13 @@ export default function Card({
     <div className={card}>
       <img src={image} alt="Character" />
       <div className={cardContent}>
-        {
-         onClose ? (<button className={btn} onClick={handleClose}>
+        {onClose ? (
+          <button className={btn} onClick={handleClose}>
             X
-          </button>) : 
-          ''
-        }
-
+          </button>
+        ) : (
+          ""
+        )}
         {isFav ? (
           <button className={fav} onClick={handleFavorite}>
             ❤️

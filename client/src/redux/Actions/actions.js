@@ -3,7 +3,6 @@ export const ADD_FAV = "ADD_FAV";
 export const REMOVE_FAV = "REMOVE_FAV";
 export const FILTER = "FILTER";
 export const ORDER = "ORDER";
-export const REMOVE_ALL_FAV = "REMOVE_ALL_FAV";
 
 export const addFav = (char) => {
   const endpoint = "http://localhost:3001/rickandmorty/fav";
@@ -34,22 +33,6 @@ export const removeFav = (id) => {
     }
   };
 };
-
-export const removeAllFav = () => {
-    const endpoint = "http://localhost:3001/rickandmorty/fav/all"; // Endpoint específico para eliminar todos los favoritos
-    return async (dispatch) => {
-        try {
-            let response = await axios.delete(endpoint);
-            console.log("Respuesta del servidor al eliminar todos los favoritos:", response.data);
-            return dispatch({
-              type: REMOVE_ALL_FAV,
-              payload: response.data,
-            });
-          } catch (error) {
-            console.log("Error al eliminar todos los favoritos:", error.message);
-          }
-    };
-  };
   
 
 export const filterCards = (gender) => {

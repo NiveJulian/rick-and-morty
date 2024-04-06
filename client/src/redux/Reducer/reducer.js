@@ -3,7 +3,6 @@ import {
   FILTER,
   ORDER,
   REMOVE_FAV,
-  REMOVE_ALL_FAV,
 } from "../Actions/actions";
 
 const initialState = {
@@ -17,7 +16,7 @@ const rootReducer = (state = initialState, action) => {
 
   switch (type) {
     case ADD_FAV:
-      return { ...state, myFavorites: payload };
+      return { ...state, myFavorites: payload, };
 
     case REMOVE_FAV:
       const updatedAllCharacters = state.allCharacters.filter(
@@ -57,13 +56,6 @@ const rootReducer = (state = initialState, action) => {
           ),
         };
       }
-      case REMOVE_ALL_FAV:
-        console.log("Removing all favorites...");
-        return {
-          ...state,
-          myFavorites: [],
-          allCharacters: [],
-        };
     default:
       return { ...state };
   }

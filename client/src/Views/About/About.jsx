@@ -7,17 +7,14 @@ const About = ()=>{
          <div>
          
          <p>
-         <h3 className={style.fuente}>MISION: Este proyecto esta dedicado a poner en practica herramientas y conocimientos,
-          vistos en el Modulo 2 y 3, de la carrera de Full Stack Development, dictada por HENRY</h3></p>
+         <h3 className={style.fuente}>MISION: Este proyecto esta dedicado a poner en practica herramientas y conocimientos de la carrera de Full Stack Development, dictada por HENRY</h3></p>
           </div>
-         <img className={style.imagenHenry} src="https://blog.soyhenry.com/content/images/2021/02/HEADER-BLOG-NEGRO-01.jpg"/>
          <div>
             <h3 className={style.fuenteSobreMi}>SOBRE MI</h3>
             <p><h3 className={style.fuenteSobreMi}>Soy Julian Niveyro, estudiante en Henry y resido en la provincia de Corrientes, Argentina. 
             Durante el desarrollo de esta aplicación, me encontré con varios desafíos que me llevaron a evaluar y poner en práctica todo lo aprendido en el módulo.
             Aunque todavia queda mucho por aprender </h3></p>
          </div>
-         <img className={style.imagenMe} src="https://i.ibb.co/xgfKHY4/gorickyourself.png"/>
         </div>
     );
 };
