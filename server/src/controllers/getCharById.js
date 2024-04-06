@@ -4,7 +4,7 @@ const axios= require ("axios");
 async function getCharById (req,res) {
     let {id}= req.params;
     try {
-        let response = await axios.get (`${URL}/${id}`)
+        let response= await axios.get (`${URL}/${id}`)
         let { 
             name,
             gender,
@@ -15,7 +15,7 @@ async function getCharById (req,res) {
         } = response.data;
     if (name){
         let character= { id, name, gender, species, origin: origin.name, image, status } 
-        return res.status(200).send ( character )
+        return res.send ( character )
     }else{
         return res.status (404).send({message:"Not Found!"})
     }
